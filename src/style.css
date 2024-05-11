@@ -98,3 +98,21 @@ footer {
 
   color: rgba(39, 33, 66, 0.4);
 }
+
+.forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.forecast-min {
+  opacity: 0.5;
+}
+.date {
+  font-size: 16px;
+  opacity: 0.6;
+}
+
+.forecast-temperature {
+  font-size: 13px;
+}
