@@ -53,22 +53,29 @@ let currentDate = new Date();
 currentDateInput.innerHTML = formatDate(currentDate);
 
 function displayForecast() {
-  let forecast = document.querySelector("#weather-forecast");
-
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  let forecastHtml = "";
 
   days.forEach(function (day) {
-    forecast.innerHTML = `
-    <div class="forecast-day">
-<div class="forecast-date">Tue</div>
-<div class="forecast-icon">⛅</div>
-<div class="forecast-temperatures">
-<div class="forecast-temperature">
-<strong>15°</strong>
-</div>
-<div class="forecast-temperature">9°</div>
-</div>
-</div>
+    forecastHtml += ` 
+    <div class="weather-forecast-day">
+      <div class="forecast-date">${day}</div>
+      <div class="image">
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          width="36"
+        />
+      </div>
+      <div class="forecast-temperatures">
+        <span class="temperature-max">18°</span>
+        <span class="temperature-min">12°</span>
+      </div>
+  </div>
 `;
   });
+
+  let forecastElement = document.querySelector("#weather-forecast");
+  forecastElement.innerHTML = forecastHtml;
 }
+
+displayForecast();
